@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.poste-vn.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@poste-vn.com'),
+        'name' => env('MAIL_FROM_NAME', 'POSTE事務局'),
     ],
 
     /*
@@ -132,5 +132,4 @@ return [
     */
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
-
 ];
