@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" rel="stylesheet">
+    @yield('stylesheets')
 </head>
 <body>
     <div id="app">
@@ -78,3 +81,7 @@
     </div>
 </body>
 </html>
+
+<script src="{{ asset('js/home.js') }}"></script>
+@yield('scripts')
+
