@@ -1,3 +1,3 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    console.log( "thống đẹp trai!" );
 });

@@ -13,3 +13,12 @@
 a:hover {
     cursor: pointer;
 }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.bg-home {
+    background-image: url("/thong/public/images/bg-home.jpg");
+    background-size: cover;
+}
