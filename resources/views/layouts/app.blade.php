@@ -40,16 +40,10 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="btn nav-link font-weight-bold text-dark dropdown-toggle" data-toggle="dropdown">
-                            Product Type
+                            TEST
                         </a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Dell</a>
-                            <a href="#" class="dropdown-item">Asus</a>
-                            <a href="#" class="dropdown-item">HP</a>
-                            <a href="#" class="dropdown-item">Apple</a>
-                            <a href="#" class="dropdown-item">Acer</a>
-                            <a href="#" class="dropdown-item">Lenovo</a>
-                            <a href="#" class="dropdown-item active">All</a>
+                            <a href="{{ url('/list') }}" class="dropdown-item">Relationships</a>
                         </div>
                     </li>
                     <li class="nav-item">
