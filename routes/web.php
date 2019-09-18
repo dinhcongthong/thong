@@ -11,17 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
+
+// test relationships
+Route::get('/list', 'HomeController@phone_list');
+Route::post('/post-save', 'HomeController@post_save')->name('post_phone_route');
+Route::view('/get-update', 'add-new-phone')->name('get_update_route');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/send-mail', 'HomeController@postSendMail')->name('post_send_mail_route');
-
-// test relationships
-Route::get('/list', 'HomeController@delete_list');
-Route::post('/post-save', 'HomeController@post_save')->name('post_phone_route');
-Route::view('/get-update', 'add-new-phone')->name('get_update_route');

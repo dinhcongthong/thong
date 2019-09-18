@@ -11,6 +11,7 @@ class IphoneList extends Model
     protected $fillable = ['name', 'origin', 'phone_id'];
 
     public function getPhone () {
-        return $this->belongsTo('App\Models\Phone', 'phone_id', 'id');
+        // return $this->hasOne('App\Models\Phone', 'id', 'phone_id');
+        return $this->hasMany('App\Models\Phone', 'id', 'phone_id');
     }
 }

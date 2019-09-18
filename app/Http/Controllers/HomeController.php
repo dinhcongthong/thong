@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -28,6 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $a = TestHelper('người đẹp trai là: ');
+        return $a;
         return view('home');
     }
 
@@ -43,17 +45,20 @@ class HomeController extends Controller
         return redirect('/');
     }
 
-    public function delete_list () {
-        $phone_list = IphoneList::all();
+    public function phone_list () {
+        // $phone_list = IphoneList::with(['getPhone'])->get();
+        $phone_list = Phone::with(['getIphone'])->has('getIphone')->toSql();
+        return $phone_list;
         return view('list_test')->with(['phone_list' => $phone_list]);
     }
 
     public function post_save (Request $request) {
-        $phoneId = 1;
-        $phone = new Phone(['name' => 'iphone', 'origin' => 'trung quoc']);
-        
-        $iphone = IphoneList::find(1);
-        $iphone = $iphone->getPhone()->save($phone);
+        $data = [
+            'name' => $request->name,
+            'origin' => $request->origin,
+            'phone_id' => 2
+        ];
+        $iphone = IphoneList::create($data);
         if (!$iphone) {
             echo ('loi cmnr!');
         }
