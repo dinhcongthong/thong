@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
     <link rel="icon" type="image/png" href="{{ asset('images/icon-title.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.5/cropper.min.css">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Thomas MP3</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,10 +24,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-success navbar-dark header">
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark header sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <h5 class="text-dark font-weight-bold">THOMAS</h5>
+                <h5 class="text-white font-weight-bold">THOMAS</h5>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
                 aria-label="{{ __('Toggle navigation') }}">
@@ -39,7 +36,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="btn nav-link font-weight-bold text-dark dropdown-toggle" data-toggle="dropdown">
+                        <a class="btn nav-link font-weight-bold text-white dropdown-toggle" data-toggle="dropdown">
                             TEST
                         </a>
                         <div class="dropdown-menu">
@@ -47,27 +44,27 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold text-dark" href="#">Origin</a>
+                        <a class="nav-link font-weight-bold text-white" href="#">Origin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold text-dark" href="#">Others</a>
+                        <a class="nav-link font-weight-bold text-white" href="#">Others</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold text-dark" href="#">Contact</a>
+                        <a class="nav-link font-weight-bold text-white" href="#">Contact</a>
                     </li>
                     @guest
                     <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link font-weight-bold text-dark">{{ __('Login') }}</a>
+                        <a href="{{ route('login') }}" class="nav-link font-weight-bold text-white">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
                         <a href="{{ route('register') }}"
-                            class="nav-link font-weight-bold text-dark">{{ __('Register') }}</a>
+                            class="nav-link font-weight-bold text-white">{{ __('Register') }}</a>
                     </li>
                     @endif
                     @else
                     <li class="nav-item dropdown">
-                        <a href="#" class="btn nav-link font-weight-bold text-dark dropdown-toggle"
+                        <a href="#" class="btn nav-link font-weight-bold text-white dropdown-toggle"
                             data-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item active"><i class="fas fa-user"></i>
@@ -105,5 +102,10 @@
 
 </html>
 
+<!-- Scripts -->
+
 <script src="{{ asset('js/home.js') }}"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.5/cropper.min.js"></script>
 @yield('scripts')

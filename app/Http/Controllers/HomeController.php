@@ -28,8 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $a = TestHelper('người đẹp trai là: ');
-        return $a;
         return view('home');
     }
 
@@ -47,8 +45,8 @@ class HomeController extends Controller
 
     public function phone_list () {
         // $phone_list = IphoneList::with(['getPhone'])->get();
-        $phone_list = Phone::with(['getIphone'])->has('getIphone')->toSql();
-        return $phone_list;
+        $phone_list = IphoneList::all();
+        // return $phone_list;
         return view('list_test')->with(['phone_list' => $phone_list]);
     }
 
@@ -65,13 +63,12 @@ class HomeController extends Controller
         return redirect('/list');
     }
 
-    public function post_delete (Request $request) {
-        $iphone = IphoneList::find($request->id);
+    public function post_delete ($id) {
+        $iphone = IphoneList::find($id);
         $iphone = $iphone->delete();
         if (!$iphone) {
             echo ('lỗi cmnr!');
         }
-        $phone_list = IphoneList::all();
-        return view('list_test')->with(['phone_list' => $phone_list]);
+        return redirect()->route('list');
     }
 }

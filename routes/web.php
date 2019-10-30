@@ -14,10 +14,12 @@
 Route::get('/', 'HomeController@index');
 
 // test relationships
-Route::get('/list', 'HomeController@phone_list');
+Route::get('/list', 'HomeController@phone_list')->name('list');
 Route::post('/post-save', 'HomeController@post_save')->name('post_phone_route');
 Route::view('/get-update', 'add-new-phone')->name('get_update_route');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::delete('post-delete/{id}', 'HomeController@post_delete')->name('post_delete_route');
 
 Auth::routes();
 

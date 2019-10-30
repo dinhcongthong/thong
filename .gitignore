@@ -2,10 +2,14 @@
 /public/hot
 /public/js
 /public/css
+/public/images
 /public/storage
 /storage/*.key
 /vendor
 composer.lock
+composer.json
+package-lock.json
+package.json
 .env.backup
 .phpunit.result.cache
 Homestead.json
